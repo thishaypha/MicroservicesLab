@@ -1,2 +1,2 @@
 ---
-eureka.client.serviceUrl.defualtZone=http://localhost:8010/eureka
+eureka.client.serviceUrl.defualtZone=http://eureka-primary:8011/eureka,http://eureka-secondary:8012/eureka/,http://eureka-tertiary:8013/eureka/
