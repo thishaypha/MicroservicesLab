@@ -1,4 +1,4 @@
 ---
-word-config:
+wordConfig:
   luckyWord: Using SpringCloud Bus
   preamble: The lucky word of the day is
