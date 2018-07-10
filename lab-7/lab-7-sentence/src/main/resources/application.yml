@@ -1,0 +1,10 @@
+---
+info:
+  component: Hysterix Dashboard
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream, info, health
+  

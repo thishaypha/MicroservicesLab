@@ -1,0 +1,28 @@
+---
+# Items that apply to ALL profiles:
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: http://localhost:8010/eureka/,http://localhost:8011/eureka/,http://localhost:8012/eureka/,http://localhost:8013/eureka/
+      defaultZone: http://localhost:8010/eureka/
+  instance:
+    metadata-map:
+      management.port: ${management.port:8081}
+server:
+  port: 8030
+  
+info:
+  component: Turbine
+
+turbine:
+  clusterNameExpression: new String("default")
+  #appConfig: sentence,subject,verb,article,adjective,noun
+  appConfig: sentence
+
+management:
+  #server:
+  #  port: 8990  
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream, info, health    
