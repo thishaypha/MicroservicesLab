@@ -1,0 +1,28 @@
+---
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/thishaypha/MicroservicesLab
+         #uri: https://github.com/kennyk65/Microservices-With-Spring-Student-Files
+          searchPaths: ConfigData
+        # "native" is used when the native profile is active, for local tests with a classpath repo:
+        native:
+          searchLocations: classpath:offline-repository/
+server:
+  port: 8001 
+ 
+### For simplicity, disable security when posting to bus/refresh:
+### NOTE: the following property management.security.enabled=false does NOT work with springboot 2.x. Replace it with custom security 
+### or set auto-config to false in main application class  
+#management:
+#  security:
+#    enabled: false
+
+# bus-refresh allows external POST requests to trigger the REFRESH
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh,hystrix.stream, info, health
